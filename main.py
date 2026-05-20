@@ -1,8 +1,8 @@
 import os
 import git
-import dotenv
+from dotenv import load_dotenv
 
-dotenv.load_dotenv()
+load_dotenv()
 
 GITHUB_USERNAME = os.getenv("GITHUB_USERNAME")
 
