@@ -89,15 +89,23 @@ def main():
 
         retrieved_docs = retriever.invoke(query)
 
+        print(f"\nDEBUG - Docs retrieved: {len(retrieved_docs)}")
+        for i, doc in enumerate(retrieved_docs):
+            print(f"DEBUG - Doc {i}: {doc.page_content[:100]}") 
+
         context = "\n\n".join([
             doc.page_content
             for doc in retrieved_docs
         ])
 
+        print(f"\nDEBUG - Context length: {len(context)}")           
+        print(f"\nDEBUG - Sending to LLM...")                       
+
         answer = generate_response(query, context)
 
-        print("\nAI Response:\n")
+        print(f"\nDEBUG - Raw answer: '{answer}'")       
 
+        print("\nAI Response:\n")
         print(answer)
 
 
