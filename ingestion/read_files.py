@@ -1,7 +1,6 @@
 import os
 
 Excluded_folders = ["node_modules", "_pycache_", "venv", ".git"]
-
 Allowed_extensions = [".py", ".js", ".jsx", ".ts", ".tsx", ".md", ".txt"]
 
 def read_files(repo_path):
@@ -14,7 +13,10 @@ def read_files(repo_path):
                 try:
                     with open(file_path, "r", encoding="utf-8", errors="ignore") as f:
                         content = f.read()
-                        all_chunks.append(content)
+                        all_chunks.append({          # ← was: all_chunks.append(content)
+                            "content": content,
+                            "metadata": {"source": file_path}
+                        })
                 except Exception as e:
-                    print(f"Error reading {file_path}: {e}")    
+                    print(f"Error reading {file_path}: {e}")
     return all_chunks

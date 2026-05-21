@@ -1,14 +1,16 @@
 from langchain_community.vectorstores import Chroma
 
-def create_chroma_vectorstore(
-    chunks,
-    embeddings
-):
-    vector_store = Chroma.from_documents(
+def create_chroma_vectorstore(chunks, embeddings, path="chroma_db"):
+    vectorstore = Chroma.from_documents(
         documents=chunks,
         embedding=embeddings,
-        persist_directory="./vector_db",
+        persist_directory=path
     )
-    
-    vector_store.persist()
-    return vector_store
+    return vectorstore
+
+def load_chroma_vectorstore(embeddings, path="chroma_db"):
+    vectorstore = Chroma(
+        persist_directory=path,
+        embedding_function=embeddings
+    )
+    return vectorstore

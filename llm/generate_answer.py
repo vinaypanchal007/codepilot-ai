@@ -1,6 +1,6 @@
 import ollama
 
-def generate_answer(query, context):
+def generate_response(query, context):    # ← was generate_answer
     prompt = f"""
     You are an AI Code Assistant
      
