@@ -2,11 +2,13 @@ fastapi
 uvicorn
 langchain
 langchain-community
+langchain-text-splitters
 chromadb
+faiss-cpu
 ollama
 python-multipart
 sentence-transformers
 pypdf
 gitpython
 tiktoken
-dotenv
+python-dotenv
