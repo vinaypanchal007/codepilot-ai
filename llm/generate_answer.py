@@ -14,10 +14,10 @@ def generate_response(query, context):
     """
     
     response = ollama.chat(
-        model="llama3.2",        # ← was llama3
+        model="llama3.2",                        # ← was llama3
         messages=[
             {"role": "system", "content": prompt},
         ]
     )
     
-    return response["message"]["content"]
+    return response.message.content
