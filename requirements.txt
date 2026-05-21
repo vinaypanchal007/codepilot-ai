@@ -12,3 +12,5 @@ pypdf
 gitpython
 tiktoken
 python-dotenv
+langchain-ollama
+langchain-chroma

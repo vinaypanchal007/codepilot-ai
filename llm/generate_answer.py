@@ -1,6 +1,6 @@
 import ollama
 
-def generate_response(query, context):    # ← was generate_answer
+def generate_response(query, context):
     prompt = f"""
     You are an AI Code Assistant
      
@@ -14,7 +14,7 @@ def generate_response(query, context):    # ← was generate_answer
     """
     
     response = ollama.chat(
-        model = "llama3",
+        model="llama3.2",        # ← was llama3
         messages=[
             {"role": "system", "content": prompt},
         ]

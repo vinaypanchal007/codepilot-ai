@@ -1,4 +1,4 @@
-from langchain_community.vectorstores import Chroma
+from langchain_chroma import Chroma    # ← new package
 
 def create_chroma_vectorstore(chunks, embeddings, path="chroma_db"):
     vectorstore = Chroma.from_documents(
