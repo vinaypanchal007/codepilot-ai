@@ -15,7 +15,6 @@ def read_files(repo_path):
                     with open(file_path, "r", encoding="utf-8", errors="ignore") as f:
                         content = f.read()
                         all_chunks.append(content)
-                        print(f"Read {file_path}")
                 except Exception as e:
                     print(f"Error reading {file_path}: {e}")    
     return all_chunks
