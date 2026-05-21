@@ -21,8 +21,6 @@ def main():
         clone_repository(repo)
         repo_path = os.path.join(BASE_DIR, repo)
         files = read_files(repo_path)
-        
-        print(f"Total files read from {repo}: {len(files)}")
     
     print("Repository ingestion process completed.")
     
