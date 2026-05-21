@@ -1,14 +1,14 @@
 import os
 
-from clone_repos import(
+from ingestion.clone_repos import (
     clone_repository
 )
 
-from read_files import(
+from ingestion.read_files import (
     read_files
 )
 
-from config import (
+from ingestion.config import (
     REPOSITORIES,
     BASE_DIR
 )
